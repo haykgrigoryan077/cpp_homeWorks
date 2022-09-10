@@ -20,8 +20,8 @@ char findFirstNoReapitingElement(char arr[], int size)
 
 int main()
 {
-    int size = 9;
-    char arr[] = "vayimarev";
+    int size = 10;
+    char arr[] = "helloworld";
     cout << findFirstNoReapitingElement(arr, size);
     return 0;
 }
