@@ -18,7 +18,7 @@ using namespace std;
 //     return '-';
 // }
 
-char findFirstNotRepeatingChar(char arr[], int size)
+char findFirstNoReapitingElement(char arr[], int size)
 {
     unsigned int indexArr[127] = {0};
 
@@ -26,7 +26,6 @@ char findFirstNotRepeatingChar(char arr[], int size)
     {
         indexArr[(unsigned int)arr[i]]++;
     }
-
     for (int i = 0; i < size; i++)
     {
         if (indexArr[(unsigned int)arr[i]] == 1)
@@ -34,7 +33,6 @@ char findFirstNotRepeatingChar(char arr[], int size)
             return arr[i];
         }
     }
-
     return '-';
 }
 
