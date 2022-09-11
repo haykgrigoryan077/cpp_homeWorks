@@ -1,20 +1,40 @@
 #include <iostream>
 using namespace std;
 
-char findFirstNoReapitingElement(char arr[], int size)
+// char findFirstNoReapitingElement(char arr[], int size)
+// {
+//     int counter = 0;
+//     for (int i = 0; i < size; i++) {
+//         counter = 0;
+//         for (int j = 0; j < size; j++) {
+//             if (arr[i] == arr[j] && i != j) {
+//                 counter++;
+//             }
+//         }
+//         if (counter == 0) {
+//             return arr[i];
+//         }
+//     }
+//     return '-';
+// }
+
+char findFirstNotRepeatingChar(char arr[], int size)
 {
-    int counter = 0;
-    for (int i = 0; i < size; i++) {
-        counter = 0;
-        for (int j = 0; j < size; j++) {
-            if (arr[i] == arr[j] && i != j) {
-                counter++;
-            }
-        }
-        if (counter == 0) {
+    unsigned int indexArr[127] = {0};
+
+    for (int i = 0; i < size; i++)
+    {
+        indexArr[(unsigned int)arr[i]]++;
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        if (indexArr[(unsigned int)arr[i]] == 1)
+        {
             return arr[i];
         }
     }
+
     return '-';
 }
 
